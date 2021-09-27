@@ -8,6 +8,11 @@ describe BankAccount do
 
   describe '#deposit' do 
     it { is_expected.to respond_to(:deposit).with(1).argument }
+
+    it 'should increase the balance by the amount given' do 
+      account = BankAccount.new
+      expect{ account.deposit 5}.to change{account.balance }.by 5
+    end
   end
 
 end
