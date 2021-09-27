@@ -24,6 +24,9 @@ describe BankAccount do
 
     it 'should reduce from the balance by the amount taken' do 
      expect {account.withdraw 1}.to change{account.balance}.by -1
+     account.deposit(500)
+     account.withdraw(200)
+     expect(account.balance).to eq 299
     end
   end
 
