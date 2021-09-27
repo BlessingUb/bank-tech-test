@@ -88,3 +88,15 @@ As a Customer
 So that I keep track of my recent transactions
 I want to my statement transations to be presented from the earliest to the oldest
 ```
+
+### My Setup and Process
+- created a README.md file
+- started the crc cards on google sheet, will import it later
+- created the user storis from the crc cards, hopefully, i covered the required edge cases
+- saved and commited
+- initiated rspec with ```rspec --init```, two files were created .rspec and spec folder.
+- I initiated the gemfile with ```bundle init``` 
+- i ran bundle and also tested the rspec was working which came back with a green.
+- created a new file for my firs test
+- wrote my first test for opening account balance is 0 and rspec hasnt detected my test yet. will debug it now to see why i have not got a red for the example test written.
+- yay i finally got the tiny bug, I named my test file wrongly used ```bank_account.spec.rb``` instead of ```bank_account_spec.rb``` so hurray i got my first R
