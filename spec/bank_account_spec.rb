@@ -19,4 +19,12 @@ describe BankAccount do
     end
   end
 
+  describe '#withdraw' do 
+    it { is_expected.to respond_to(:withdraw).with(1).argument }
+
+    it 'should reduce from the balance by the amount taken' do 
+     expect {account.withdraw 1}.to change{account.balance}.by -1
+    end
+  end
+
 end
