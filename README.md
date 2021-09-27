@@ -100,3 +100,4 @@ I want to my statement transations to be presented from the earliest to the olde
 - created a new file for my firs test
 - wrote my first test for opening account balance is 0 and rspec hasnt detected my test yet. will debug it now to see why i have not got a red for the example test written.
 - yay i finally got the tiny bug, I named my test file wrongly used ```bank_account.spec.rb``` instead of ```bank_account_spec.rb``` so hurray i got my first R
+- Now after a R i created the class BankAccount with an attribute-reader balance and set it equal t 0, my first test is passing, G
