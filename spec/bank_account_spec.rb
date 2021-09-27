@@ -6,4 +6,8 @@ describe BankAccount do
     expect(account.balance).to eq 0
   end
 
+  describe '#deposit' do 
+    it { is_expected.to respond_to(:deposit).with(1).argument }
+  end
+
 end
