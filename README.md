@@ -1,7 +1,7 @@
 # Bank Tech Test - ruby
 This is a project to practice my OO design and TDD skills while maintaining good code quality.
 
-the project allows one to create an account, deposit money into the account, withdraw from the account and also print statements.
+This project allows one to create an account, deposit money into the account, withdraw from the account and also print statements.
 
 ## Specification
 
@@ -103,3 +103,4 @@ I want to my statement transations to be presented from the earliest to the olde
 - Now after a Red, I created the class `BankAccount` with an attribute-reader balance and set it equal to 0, my first test is passing, Green.
 - I wrote another test using a one-liner to test the deposit method, failed then created the method deposit with 1 argument(amount), now test passed.
 - I wrote a new test to check that the balance increases by the amount, failed test then i hardcoded it to get a green. Now removed the hardcoded part and refactored!
+![Feature test passing](image/feature_test_1.png)
