@@ -23,15 +23,15 @@ describe BankAccount do
     it { is_expected.to respond_to(:withdraw).with(1).argument }
 
     it 'should reduce from the balance by the amount taken' do 
-      expect { account.withdraw 1 }.to change { account.balance }.by(-1)
       account.deposit(500)
+      expect { account.withdraw 1 }.to change { account.balance }.by(-1)
       account.withdraw(200)
       expect(account.balance).to eq 299
     end
 
     it 'throws an error message when amount to be withdrawn exceed balance' do 
       account.deposit(200)  
-      expect { subject.withdraw 300 }.to raise_error 'Insufficient funds!, you need to increase your earnings!'
+      expect { account.withdraw 250 }.to raise_error ('Insufficient funds!')
     end
   end
 
