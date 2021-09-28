@@ -6,10 +6,14 @@ class BankAccount
   end 
 
   def deposit(amount)
+    raise 'Invalid Input!, enter a number' if amount.is_a?(String)
+    raise 'Invalid Input!, enter the right amount'if amount.negative? 
     @balance += amount
   end
 
   def withdraw(amount)
+    raise 'Invalid Input!, enter a number' if amount.is_a?(String)
+    raise 'Invalid Input!, enter the right amount'if amount.negative? 
     fail 'Insufficient funds!' if @balance < amount
     @balance -= amount
   end

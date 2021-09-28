@@ -67,14 +67,14 @@ I want to be able to see dates on my bank account statements
 ```
 As a Customer 
 So that I can how much I deposited
-I want to a deposit on my statment to reflect the credit amount
+I want a deposit on my statment to reflect the credit amount
 ```
 
 ```
 
 As a Customer 
 So that I can know how much I withdrew
-I want to a withdrawal on my statment to reflect the debit amount
+I want a withdrawal on my statment to reflect the debit amount
 ```
 
 ```
@@ -108,4 +108,5 @@ I want to my statement transations to be presented from the earliest to the olde
 - The problem now as seen from irb is customers can withdraw the money they dont have, goodness! looks like the bank will soon run bankrupt, we need to fix it.
 - Written a failing test to raise error when balance is less than the amount to be withdrawn, also fix the gemfile so I can check for coverage and also did some rubocop setup cos it wasnt working well before now.
 - I had an error message, Runtime error after writing out the code for the insufficent funds test, I was stuck with it for over 30 minutes, debugging the error, i successfully just copied the error message in the test and pasted it on the code, i guess i must have missed a space or so. but yay a green test now.
--
+- another edge cases, The amount shouldnt take a negative value, cos i tried entering a negative value and its working also entered a string and it broke.
+- now fixed no more negative entry and no string is allowd

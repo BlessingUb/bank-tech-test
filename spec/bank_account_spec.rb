@@ -8,6 +8,7 @@ describe BankAccount do
     expect(account.balance).to eq 0
   end
 
+
   describe '#deposit' do 
     it { is_expected.to respond_to(:deposit).with(1).argument }
 
@@ -16,6 +17,14 @@ describe BankAccount do
       account.deposit(1500)
       account.deposit(2550)
       expect(account.balance).to eq 4100
+    end
+
+    it "raises an error when the amount entered is a negative value" do 
+      expect { account.deposit -1 }.to raise_error ('Invalid Input!, enter the right amount')
+    end
+
+    it "raises an error when the amount entered is a string" do 
+      expect { account.deposit("something")  }.to raise_error ('Invalid Input!, enter a number')
     end
   end
 
@@ -32,6 +41,14 @@ describe BankAccount do
     it 'throws an error message when amount to be withdrawn exceed balance' do 
       account.deposit(200)  
       expect { account.withdraw 250 }.to raise_error ('Insufficient funds!')
+    end
+
+    it "raises an error when the amount entered is a negative value" do 
+      expect { account.withdraw -1 }.to raise_error ('Invalid Input!, enter the right amount')
+    end
+
+    it "raises an error when the amount entered is a string" do 
+      expect { account.withdraw("something")  }.to raise_error ('Invalid Input!, enter a number')
     end
   end
 
