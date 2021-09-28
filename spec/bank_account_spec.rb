@@ -8,7 +8,6 @@ describe BankAccount do
     expect(account.balance).to eq 0
   end
 
-
   describe '#deposit' do 
     it { is_expected.to respond_to(:deposit).with(1).argument }
 
@@ -20,11 +19,19 @@ describe BankAccount do
     end
 
     it "raises an error when the amount entered is a negative value" do 
-      expect { account.deposit -1 }.to raise_error ('Invalid Input!, enter the right amount')
+      expect { account.deposit(-1) }.to raise_error('Invalid Input!, enter the right amount')
     end
 
     it "raises an error when the amount entered is a string" do 
-      expect { account.deposit("something")  }.to raise_error ('Invalid Input!, enter a number')
+      expect { account.deposit("something") }.to raise_error('Invalid Input!, enter a number')
+    end 
+
+    it 'includes the date, credit, debit and balance in a transation' do
+      account.deposit(200)
+      expect(account.transactions[0][:date]).to eq BankAccount::THISDAY
+      expect(account.transactions[0][:credit]).to eq 200
+      expect(account.transactions[0][:debit]).to eq 0
+      expect(account.transactions[0][:balance]).to eq 200
     end
   end
 
@@ -40,15 +47,25 @@ describe BankAccount do
 
     it 'throws an error message when amount to be withdrawn exceed balance' do 
       account.deposit(200)  
-      expect { account.withdraw 250 }.to raise_error ('Insufficient funds!')
+      expect { account.withdraw 250 }.to raise_error('Insufficient funds!')
     end
 
     it "raises an error when the amount entered is a negative value" do 
-      expect { account.withdraw -1 }.to raise_error ('Invalid Input!, enter the right amount')
+      expect { account.withdraw(-1) }.to raise_error('Invalid Input!, enter the right amount')
     end
 
     it "raises an error when the amount entered is a string" do 
-      expect { account.withdraw("something")  }.to raise_error ('Invalid Input!, enter a number')
+      expect { account.withdraw("something") }.to raise_error('Invalid Input!, enter a number')
+    end
+
+
+    it 'includes the date, credit, debit and balance in a transaction' do
+      account.deposit(200)
+      account.withdraw(50)
+      expect(account.transactions[1][:date]).to eq BankAccount::THISDAY
+      expect(account.transactions[1][:credit]).to eq 0
+      expect(account.transactions[1][:debit]).to eq 50
+      expect(account.transactions[1][:balance]).to eq 150
     end
   end
 
