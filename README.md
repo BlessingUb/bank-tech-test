@@ -108,7 +108,8 @@ I want to my statement transations to be presented from the earliest to the olde
 - The problem now as seen from irb is customers can withdraw the money they dont have, goodness! looks like the bank will soon run bankrupt, we need to fix it.
 - Written a failing test to raise error when balance is less than the amount to be withdrawn, also fix the gemfile so I can check for coverage and also did some rubocop setup cos it wasnt working well before now.
 - I had an error message, Runtime error after writing out the code for the insufficent funds test, I was stuck with it for over 30 minutes, debugging the error, i successfully just copied the error message in the test and pasted it on the code, i guess i must have missed a space or so. but yay a green test now.
-- another edge cases, The amount shouldnt take a negative value, cos i tried entering a negative value and its working also entered a string and it broke.
+- Another edge case, The amount shouldnt take a negative value, cos i tried entering a negative value and its working also entered a string and it broke.
 - Now fixed no more negative entry and no string is allowd
 - Now the ability to print statement, but to print statment I need the transactions history, so im gonna add that test, im feeling like  should start the transactions class now but i also feel like i should continue in the bank_account class first then extract it much later.
 - I required date library in the class BankAccount and created a transactions array that stores every transaction.
+-

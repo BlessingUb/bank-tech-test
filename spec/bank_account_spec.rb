@@ -69,4 +69,11 @@ describe BankAccount do
     end
   end
 
+  describe '#statement' do 
+    it "includes the header for the statement" do 
+      subject.deposit(200)        
+      expect { account.statement }.to output("date || credit || debit || balance\n").to_stdout
+    end
+  end
+
 end 

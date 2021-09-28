@@ -25,6 +25,13 @@ class BankAccount
     @balance -= amount
     @transactions << { date: THISDAY, credit: 0, debit: amount, balance: @balance }
     
-  end
+  end 
 
+  def statement 
+  
+    puts "date || credit || debit || balance\n"
+    @transactions.map{ |each_transaction| puts "#{each_transaction[:date]} || #{each_transaction[:credit]} || #{each_transaction[:debit]} || #{each_transaction[:balance]}\n"}
+    
+  end
+  
 end
