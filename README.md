@@ -106,3 +106,4 @@ I want to my statement transations to be presented from the earliest to the olde
 ![Feature test passing](image/feature_test_1.png)
 - Now tested for the withdraw method, hardcoded the deduction.
 - The problem now as seen from irb is customers can withdraw the money they dont have, goodness! looks like the bank will soon run bankrupt, we need to fix it.
+- Written a failing test to raise error when balance is less than the amount to be withdrawn, also fix the gemfile so I can check for coverage and also did some rubocop setup cos it wasnt working well before now.
