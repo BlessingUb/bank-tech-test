@@ -104,4 +104,5 @@ I want to my statement transations to be presented from the earliest to the olde
 - I wrote another test using a one-liner to test the deposit method, failed then created the method deposit with 1 argument(amount), now test passed.
 - I wrote a new test to check that the balance increases by the amount, failed test then i hardcoded it to get a green. Now removed the hardcoded part and refactored!
 ![Feature test passing](image/feature_test_1.png)
-- Now tested for the withdraw method, hardcoded the deduction
+- Now tested for the withdraw method, hardcoded the deduction.
+- The problem now as seen from irb is customers can withdraw the money they dont have, goodness! looks like the bank will soon run bankrupt, we need to fix it.
