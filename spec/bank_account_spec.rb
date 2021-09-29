@@ -1,9 +1,14 @@
 require 'bank_account' 
 
 describe BankAccount do 
+  let(:statement) { double(:statement) }
+  let(:account) { BankAccount.new(statement) } 
 
-  let(:account) { BankAccount.new } 
-
+  before do 
+    allow(statement).to receive(:debit_transaction)
+    allow(statement).to receive(:credit_transaction)
+  end
+  
   it 'is initialized with an opening account balance of 0 and a new statement' do
     expect(account.balance).to eq 0 
   end

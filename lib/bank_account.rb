@@ -1,10 +1,12 @@
 require "date"
+require_relative 'statement'
 
 class BankAccount 
   attr_reader :balance
 
-  def initialize 
+  def initialize(statement = Statement.new ) 
     @balance = 0
+    @statement = statement
   end 
 
   def deposit(amount)
@@ -12,6 +14,7 @@ class BankAccount
     raise 'Invalid Input!, enter the right amount' if amount.negative? 
 
     @balance += amount
+    @statement.credit_transaction(amount, @balance)
   end
 
   def withdraw(amount)
@@ -20,7 +23,7 @@ class BankAccount
     fail 'Insufficient funds!' if @balance < amount
     
     @balance -= amount
-    
+    @statement.debit_transaction(amount, @balance)
   end 
 
   # def statement 
