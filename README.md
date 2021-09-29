@@ -130,7 +130,7 @@ I want to my statement transations to be presented from the earliest to the olde
 
 CRC modelling:
 
-![CRC Model](image/crc_card.png)
+![CRC Model](image/crc_cardd.png)
 
 ### My Setup and Process
 - created a README.md file
