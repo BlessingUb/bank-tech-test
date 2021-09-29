@@ -16,7 +16,6 @@ class BankAccount
 
     @balance += amount
     @statement.credit_transaction(amount, @balance)
- 
   end
 
   def withdraw(amount)
@@ -26,7 +25,6 @@ class BankAccount
     
     @balance -= amount
     @statement.debit_transaction(amount, @balance)
-  
   end 
 
 
