@@ -3,6 +3,7 @@ require 'bank_account'
 describe BankAccount do 
   let(:statement) { double(:statement) }
   let(:account) { BankAccount.new(statement) } 
+  let(:printer) { double(:printer) }
 
   before do 
     allow(statement).to receive(:debit_transaction)
@@ -58,11 +59,12 @@ describe BankAccount do
 
   end
 
-  # describe '#statement' do 
-  #   it "includes the header for the statement" do 
-  #     subject.deposit(200)        
-  #     expect { account.statement }.to output("date || credit || debit || balance\n").to_stdout
-  #   end
-  # end
+  describe '#print_statement' do 
+    it "prints the statement using the print method" do
+    allow(printer).to receive(:print)
+    allow(statement).to receive(:transactions) 
+      expect (account.print_statement(print)).to eq("Statement printed!")
+    end
+  end
 
 end 

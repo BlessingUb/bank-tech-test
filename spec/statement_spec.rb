@@ -10,7 +10,7 @@ describe Statement do
     subject.credit_transaction(200, 200)
     expect(subject.transactions[0][:date]).to eq Statement::THISDAY
     expect(subject.transactions[0][:credit]).to eq 200
-    expect(subject.transactions[0][:debit]).to eq 0
+    expect(subject.transactions[0][:debit]).to eq ()
     expect(subject.transactions[0][:balance]).to eq 200
     end 
   end
@@ -20,7 +20,7 @@ describe Statement do
       subject.credit_transaction(200, 200)
       subject.debit_transaction(50, 150)
       expect(subject.transactions[1][:date]).to eq Statement::THISDAY
-      expect(subject.transactions[1][:credit]).to eq 0
+      expect(subject.transactions[1][:credit]).to eq ()
       expect(subject.transactions[1][:debit]).to eq 50
       expect(subject.transactions[1][:balance]).to eq 150
     end

@@ -1,5 +1,6 @@
 require "date"
 require_relative 'statement'
+require_relative 'printer'
 
 class BankAccount 
   attr_reader :balance
@@ -28,11 +29,8 @@ class BankAccount
   
   end 
 
-  # def statement 
-  
-  #   puts "date || credit || debit || balance\n"
-  #   @transactions.map{ |each_transaction| puts "#{each_transaction[:date]} || #{each_transaction[:credit]} || #{each_transaction[:debit]} || #{each_transaction[:balance]}\n"}
-    
-  # end
+  def print_statement(from_printer = Printer.new) 
+    from_printer.print(@statement.transactions)
+  end
   
 end
