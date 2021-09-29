@@ -4,8 +4,8 @@ describe BankAccount do
 
   let(:account) { BankAccount.new } 
 
-  it 'is initialized with an opening account balance of 0' do
-    expect(account.balance).to eq 0
+  it 'is initialized with an opening account balance of 0 and a new statement' do
+    expect(account.balance).to eq 0 
   end
 
   describe '#deposit' do 
@@ -26,13 +26,6 @@ describe BankAccount do
       expect { account.deposit("something") }.to raise_error('Invalid Input!, enter a number')
     end 
 
-    it 'includes the date, credit, debit and balance in a transation' do
-      account.deposit(200)
-      expect(account.transactions[0][:date]).to eq BankAccount::THISDAY
-      expect(account.transactions[0][:credit]).to eq 200
-      expect(account.transactions[0][:debit]).to eq 0
-      expect(account.transactions[0][:balance]).to eq 200
-    end
   end
 
   describe '#withdraw' do 
@@ -58,22 +51,13 @@ describe BankAccount do
       expect { account.withdraw("something") }.to raise_error('Invalid Input!, enter a number')
     end
 
-
-    it 'includes the date, credit, debit and balance in a transaction' do
-      account.deposit(200)
-      account.withdraw(50)
-      expect(account.transactions[1][:date]).to eq BankAccount::THISDAY
-      expect(account.transactions[1][:credit]).to eq 0
-      expect(account.transactions[1][:debit]).to eq 50
-      expect(account.transactions[1][:balance]).to eq 150
-    end
   end
 
-  describe '#statement' do 
-    it "includes the header for the statement" do 
-      subject.deposit(200)        
-      expect { account.statement }.to output("date || credit || debit || balance\n").to_stdout
-    end
-  end
+  # describe '#statement' do 
+  #   it "includes the header for the statement" do 
+  #     subject.deposit(200)        
+  #     expect { account.statement }.to output("date || credit || debit || balance\n").to_stdout
+  #   end
+  # end
 
 end 

@@ -1,12 +1,10 @@
 require "date"
 
 class BankAccount 
-  THISDAY = Date.today.strftime("%d/%m/%Y")
-  attr_reader :balance, :transactions
+  attr_reader :balance
 
   def initialize 
     @balance = 0
-    @transactions = []
   end 
 
   def deposit(amount)
@@ -14,7 +12,6 @@ class BankAccount
     raise 'Invalid Input!, enter the right amount' if amount.negative? 
 
     @balance += amount
-    @transactions << { date: THISDAY, credit: amount, debit: 0, balance: @balance }
   end
 
   def withdraw(amount)
@@ -23,15 +20,14 @@ class BankAccount
     fail 'Insufficient funds!' if @balance < amount
     
     @balance -= amount
-    @transactions << { date: THISDAY, credit: 0, debit: amount, balance: @balance }
     
   end 
 
-  def statement 
+  # def statement 
   
-    puts "date || credit || debit || balance\n"
-    @transactions.map{ |each_transaction| puts "#{each_transaction[:date]} || #{each_transaction[:credit]} || #{each_transaction[:debit]} || #{each_transaction[:balance]}\n"}
+  #   puts "date || credit || debit || balance\n"
+  #   @transactions.map{ |each_transaction| puts "#{each_transaction[:date]} || #{each_transaction[:credit]} || #{each_transaction[:debit]} || #{each_transaction[:balance]}\n"}
     
-  end
+  # end
   
 end
