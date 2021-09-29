@@ -1,17 +1,17 @@
 require 'statement'
 describe Statement do  
 
-    it 'initialized with no transactions' do
-      expect(subject.transactions).to be_empty
-    end
+  it 'initialized with no transactions' do
+    expect(subject.transactions).to be_empty
+  end
 
   context '#credit_transaction' do 
     it 'includes the date, credit, debit and balance in a credit transaction' do
-    subject.credit_transaction(200, 200)
-    expect(subject.transactions[0][:date]).to eq Statement::THISDAY
-    expect(subject.transactions[0][:credit]).to eq 200
-    expect(subject.transactions[0][:debit]).to eq ()
-    expect(subject.transactions[0][:balance]).to eq 200
+      subject.credit_transaction(200, 200)
+      expect(subject.transactions[0][:date]).to eq Statement::THISDAY
+      expect(subject.transactions[0][:credit]).to eq 200
+      expect(subject.transactions[0][:debit]).to eq ()
+      expect(subject.transactions[0][:balance]).to eq 200
     end 
   end
 

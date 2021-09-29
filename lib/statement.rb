@@ -8,10 +8,10 @@ class Statement
   end 
 
   def credit_transaction(amount, balance)
-    @transactions << { date: THISDAY, credit: amount, debit: nil , balance: balance }
+    @transactions << { date: THISDAY, credit: amount, debit: nil, balance: balance }
   end
 
   def debit_transaction(amount, balance)
-    @transactions << { date: THISDAY, credit: nil , debit: amount, balance: balance }
+    @transactions << { date: THISDAY, credit: nil, debit: amount, balance: balance }
   end
 end

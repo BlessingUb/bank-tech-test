@@ -61,9 +61,9 @@ describe BankAccount do
 
   describe '#print_statement' do 
     it "prints the statement using the print method" do
-    allow(printer).to receive(:print)
-    allow(statement).to receive(:transactions) 
-      expect (account.print_statement(print)).to eq("Statement printed!")
+      allow(printer).to receive(:print)
+      allow(statement).to receive(:transactions) 
+      expect (account.print_statement(print)).to eq()
     end
   end
 
