@@ -38,7 +38,7 @@ This project allows one to create an account, deposit money into the account, wi
 
 ## Final Look 
 Here is what it looks like on IRB 
-![Final Look](image/feature_test_1.png)
+![Final Look](image/finalshot.png)
 
 ## Specification
 
