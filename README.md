@@ -6,16 +6,17 @@ This project allows one to create an account, deposit money into the account, wi
 
 ### How to Interact as a User
 - Clone this repo.
+- cd into the folder
 - Install dependencies with:
 
    ```shell
-   bundle
+   bundle install
    ```
 
-- Run test suites with:
+- Run test suites in terminal with:
 
    ```shell
-   rspec && rubocop
+   rspec 
    ```
 
 - Launch IRB:
@@ -27,7 +28,7 @@ This project allows one to create an account, deposit money into the account, wi
   In IRB.
 
    ```irb
-   require './lib/account.rb'
+   require './lib/bank_account.rb'
    account = BankAccount.new
    ```
 
